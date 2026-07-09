@@ -1,0 +1,7 @@
+# Never commit secrets / seed data / private settings to this public repo
+*-seed.json
+*seed*.json
+*-settings.json
+cipl-seeder.html
+_private*
+.DS_Store

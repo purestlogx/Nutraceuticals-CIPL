@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIPL Generator — TPG Nutraceuticals</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=EB+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDF8F2; --teal:#004C4F; --moss:#375428;
+  --border:rgba(0,76,79,0.12); --tint:rgba(0,76,79,0.06);
+  --card:#fff; --muted:#5B6B6C; --danger:#8B1E1E;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--teal);font-size:14px}
+h1,h2,.card-title,.inv-title{font-family:'EB Garamond',Georgia,serif}
+.topbar{background:var(--teal);color:var(--bg);padding:14px 28px;display:flex;align-items:center;gap:14px}
+.topbar h1{font-size:20px;font-weight:600;letter-spacing:.01em}
+.topbar .who{font-size:12px;opacity:.7;margin-left:auto}
+.topbar button{background:transparent;border:1px solid rgba(253,248,242,.4);color:var(--bg);padding:6px 14px;border-radius:7px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+.topbar button:hover{background:rgba(253,248,242,.12)}
+.wrap{max-width:980px;margin:0 auto;padding:28px 20px}
+.card{background:var(--card);border-radius:14px;border:1px solid var(--border);padding:22px 24px;margin-bottom:16px}
+.card-title{font-size:17px;font-weight:600;letter-spacing:.01em;color:var(--teal);margin-bottom:16px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.g4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
+.g5{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:12px}
+.f{display:flex;flex-direction:column;gap:5px}
+.f label{font-size:11px;color:var(--muted);font-weight:500}
+.f input,.f select,.f textarea{font-family:'DM Sans',sans-serif;font-size:13px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--teal);width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--teal);background:#fff;box-shadow:0 0 0 3px var(--tint)}
+.f textarea{resize:vertical;min-height:58px;line-height:1.5}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.chip{padding:7px 18px;border-radius:20px;border:1px solid var(--border);font-size:13px;cursor:pointer;background:#fff;color:var(--muted);transition:all .15s;white-space:nowrap}
+.chip:hover{border-color:var(--teal);color:var(--teal)}
+.chip.on{background:var(--teal);color:var(--bg);border-color:var(--teal)}
+.chip.add{border-style:dashed;color:var(--muted)}
+.computed{background:var(--tint);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:13px;font-weight:600;color:var(--teal);min-height:36px;display:flex;align-items:center}
+.sep{border:none;border-top:1px solid var(--border);margin:16px 0}
+.sub{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px;margin-top:2px}
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.btn{padding:9px 20px;border-radius:8px;border:1px solid var(--border);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:all .15s;white-space:nowrap;background:#fff;color:var(--teal)}
+.btn-p{background:var(--teal);color:var(--bg);border-color:var(--teal)}
+.btn-p:hover{background:var(--moss);border-color:var(--moss)}
+.btn-s{background:#fff;color:var(--teal);border-color:var(--border)}
+.btn-s:hover{background:var(--tint)}
+.btn-d{background:#fff;color:var(--danger);border-color:rgba(139,30,30,.25);font-size:11px;padding:5px 12px}
+.btn-d:hover{background:rgba(139,30,30,.06)}
+.inv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.inv-title{font-size:18px;font-weight:600;color:var(--teal)}
+.nitta-banner{background:#FBF3E3;border:1px solid #E7D3A1;border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:12px;color:#7A5A12}
+.prow{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;align-items:end;margin-bottom:8px}
+.count-badge{background:var(--tint);color:var(--teal);padding:2px 10px;border-radius:10px;font-size:12px;font-weight:700;font-family:'DM Sans',sans-serif}
+footer{text-align:center;font-size:11px;color:var(--muted);opacity:.7;padding:24px 0 36px}
+/* Login */
+#login{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:50;padding:20px}
+.login-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px 30px;width:100%;max-width:380px;box-shadow:0 8px 30px rgba(0,76,79,.08)}
+.login-card h2{font-size:22px;color:var(--teal);margin-bottom:6px}
+.login-card p.tag{font-size:12px;color:var(--muted);margin-bottom:22px}
+.login-card .f{margin-bottom:14px}
+.login-card .btn{width:100%;justify-content:center;text-align:center;padding:11px}
+.login-msg{font-size:12px;margin-top:14px;min-height:16px}
+.login-msg.err{color:var(--danger)}
+.login-msg.warn{color:#7A5A12}
+#app{display:none}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--bg);padding:10px 20px;border-radius:10px;font-size:13px;z-index:60;opacity:0;transition:opacity .25s;pointer-events:none}
+#toast.show{opacity:1}
+#toast.err{background:var(--danger)}
+@media(max-width:640px){
+  .g2,.g3,.g4,.g5{grid-template-columns:1fr}
+  .prow{grid-template-columns:1fr 1fr}
+  .wrap{padding:18px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── LOGIN GATE ─────────────────────────────────────────────── -->
+<div id="login">
+  <div class="login-card">
+    <h2>CIPL Generator</h2>
+    <p class="tag">TPG Nutraceuticals · sign in to continue</p>
+    <div class="f"><label>Email</label><input id="lg-email" type="email" placeholder="you@thepurestgroup.com" autocomplete="username"></div>
+    <div class="f"><label>Password</label><input id="lg-pass" type="password" autocomplete="current-password"></div>
+    <button class="btn btn-p" id="lg-btn" onclick="doLogin()">Sign in</button>
+    <div class="login-msg" id="lg-msg"></div>
+  </div>
+</div>
+
+<!-- ── APP ────────────────────────────────────────────────────── -->
+<div id="app">
+<div class="topbar">
+  <h1>CIPL Generator</h1>
+  <span class="who" id="who"></span>
+  <button onclick="doLogout()">Sign out</button>
+</div>
+<div class="wrap">
+
+  <!-- EXPORTER -->
+  <div class="card">
+    <div class="card-title">Exporter</div>
+    <div class="f" style="margin-bottom:12px"><label>Preset</label><select id="exp-select" onchange="applyExporter(this.value)"></select></div>
+    <div class="g3">
+      <div class="f"><label>Company name</label><input id="exp-name"></div>
+      <div class="f"><label>UEN</label><input id="exp-uen"></div>
+      <div class="f"><label>Default address</label><input id="exp-addr"></div>
+    </div>
+  </div>
+
+  <!-- IMPORTER -->
+  <div class="card">
+    <div class="card-title">Importer</div>
+    <div class="f" style="margin-bottom:12px"><label>Preset</label><select id="imp-select" onchange="applyImporter(this.value)"></select></div>
+    <div class="g3">
+      <div class="f"><label>Company name</label><input id="imp-name"></div>
+      <div class="f"><label>TEL</label><input id="imp-tel"></div>
+      <div class="f"><label>Address</label><textarea id="imp-addr"></textarea></div>
+    </div>
+  </div>
+
+  <!-- INVOICES -->
+  <div class="card">
+    <div class="card-title">Invoices <span class="count-badge" id="inv-count">0</span></div>
+    <div class="chips" id="chips"></div>
+    <div id="inv-form"></div>
+    <hr class="sep">
+    <div class="btns">
+      <button class="btn btn-p" onclick="saveToCloud()">&#8681; Save all to cloud</button>
+      <button class="btn btn-s" onclick="reloadFromCloud()">&#8635; Reload from cloud</button>
+    </div>
+    <div class="sub" id="save-status" style="margin-top:10px;text-transform:none;letter-spacing:0;color:var(--muted)"></div>
+  </div>
+
+  <footer>CIPL Generator &middot; TPG Nutraceuticals Pte. Ltd. &middot; For internal use</footer>
+</div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ══ FIREBASE CONFIG ═══════════════════════════════════════════════
+// TODO: paste your NEW purest-logx-tool web-app config below.
+// Firebase Console → Project Settings → General → Your apps → Web app → Config.
+const firebaseConfig = {
+  apiKey: "AIzaSyDM3-Ob02qPFG0Wp67o9iWsohuw6hj3VhE",
+  authDomain: "purest-logx-tools.firebaseapp.com",
+  projectId: "purest-logx-tools",
+  storageBucket: "purest-logx-tools.firebasestorage.app",
+  messagingSenderId: "684066133614",
+  appId: "1:684066133614:web:26c955f62ec49bb88fb87f"
+};
+const CONFIG_READY = firebaseConfig.apiKey !== "PASTE_API_KEY";
+
+let db = null, auth = null;
+if (CONFIG_READY) {
+  try {
+    firebase.initializeApp(firebaseConfig);
+    auth = firebase.auth();
+    db = firebase.firestore();
+  } catch (e) { console.error('Firebase init failed', e); }
+}
+
+// ══ TOAST ═════════════════════════════════════════════════════════
+let toastT = null;
+function toast(msg, isErr){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'show' + (isErr ? ' err' : '');
+  clearTimeout(toastT);
+  toastT = setTimeout(()=>{ t.className = t.className.replace('show','').trim(); }, 3200);
+}
+
+// ══ AUTH ══════════════════════════════════════════════════════════
+const INACTIVITY_MS = 2 * 60 * 60 * 1000; // 2h
+let idleT = null;
+function resetIdle(){
+  clearTimeout(idleT);
+  if (auth && auth.currentUser) idleT = setTimeout(()=>{ doLogout(true); }, INACTIVITY_MS);
+}
+
+function doLogin(){
+  const msg = document.getElementById('lg-msg');
+  if (!CONFIG_READY){ msg.className='login-msg warn'; msg.textContent='⚠ Firebase not configured yet — paste the purest-logx-tool config into the page source.'; return; }
+  const email = document.getElementById('lg-email').value.trim();
+  const pass  = document.getElementById('lg-pass').value;
+  if (!email || !pass){ msg.className='login-msg err'; msg.textContent='Enter email and password.'; return; }
+  msg.className='login-msg'; msg.textContent='Signing in…';
+  document.getElementById('lg-btn').disabled = true;
+  auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+    .then(()=> auth.signInWithEmailAndPassword(email, pass))
+    .catch(err=>{
+      document.getElementById('lg-btn').disabled = false;
+      msg.className='login-msg err';
+      msg.textContent = (err.code==='auth/invalid-credential'||err.code==='auth/wrong-password'||err.code==='auth/user-not-found')
+        ? 'Incorrect email or password.' : (err.message||'Sign-in failed.');
+    });
+}
+
+function doLogout(idle){
+  if (auth) auth.signOut();
+  if (idle) toast('Signed out after inactivity.');
+}
+
+if (auth){
+  auth.onAuthStateChanged(async user=>{
+    if (user){
+      document.getElementById('login').style.display='none';
+      document.getElementById('app').style.display='block';
+      document.getElementById('who').textContent = user.email || '';
+      resetIdle();
+      await loadCloudData();
+    } else {
+      document.getElementById('app').style.display='none';
+      document.getElementById('login').style.display='flex';
+      document.getElementById('lg-btn').disabled = false;
+      document.getElementById('lg-pass').value='';
+      clearTimeout(idleT);
+    }
+  });
+} else {
+  // No Firebase config yet — show login with a hint.
+  window.addEventListener('DOMContentLoaded', ()=>{
+    const msg = document.getElementById('lg-msg');
+    if (!CONFIG_READY){ msg.className='login-msg warn'; msg.textContent='⚠ Firebase not configured yet — paste the purest-logx-tool config into the page source.'; }
+  });
+}
+['click','keydown','mousemove','touchstart'].forEach(ev=>document.addEventListener(ev, resetIdle, {passive:true}));
+
+// ══ SHARED DATA (loaded from Firestore) ══════════════════════════
+let PARTIES = { exporters:[], importers:[] };
+let CATALOG = { products:[] };
+let STAMP = '', SIG = '';
+const LS_KEY = 'ciplDrafts';
+
+async function loadCloudData(){
+  const status = document.getElementById('save-status');
+  try {
+    const [pSnap, cSnap, aSnap] = await Promise.all([
+      db.collection('cipl').doc('parties').get(),
+      db.collection('cipl').doc('catalog').get(),
+      db.collection('cipl').doc('assets').get()
+    ]);
+    if (pSnap.exists) PARTIES = pSnap.data();
+    if (cSnap.exists) CATALOG = cSnap.data();
+    if (aSnap.exists){ STAMP = aSnap.data().stamp || ''; SIG = aSnap.data().sig || ''; }
+
+    // Drafts
+    const dSnap = await db.collection('cipl').doc('drafts').collection('entries').get();
+    const cloudDrafts = [];
+    dSnap.forEach(doc=> cloudDrafts.push(doc.data()));
+    if (cloudDrafts.length){
+      invoices = cloudDrafts;
+    } else {
+      const ls = localStorage.getItem(LS_KEY);
+      invoices = ls ? JSON.parse(ls) : [blankInvoice()];
+    }
+    active = 0;
+    renderParties();
+    renderChips(); renderForm();
+    status.textContent = 'Loaded from cloud · ' + invoices.length + ' invoice(s).';
+  } catch(e){
+    console.error(e);
+    // Offline / rules fallback: use localStorage
+    const ls = localStorage.getItem(LS_KEY);
+    invoices = ls ? JSON.parse(ls) : [blankInvoice()];
+    active = 0;
+    renderParties();
+    renderChips(); renderForm();
+    toast('Could not reach cloud — using local copy.', true);
+    status.textContent = 'Offline — using local copy.';
+  }
+}
+
+async function reloadFromCloud(){ if (db && auth.currentUser) await loadCloudData(); }
+
+async function saveToCloud(){
+  const status = document.getElementById('save-status');
+  if (!db || !auth.currentUser){ toast('Not signed in.', true); return; }
+  try {
+    const col = db.collection('cipl').doc('drafts').collection('entries');
+    // Upsert every current invoice
+    await Promise.all(invoices.map(v=> col.doc(String(v.id)).set(JSON.parse(JSON.stringify(v)))));
+    // Delete cloud drafts that are no longer present
+    const snap = await col.get();
+    const keep = new Set(invoices.map(v=>String(v.id)));
+    await Promise.all(snap.docs.filter(d=>!keep.has(d.id)).map(d=>d.ref.delete()));
+    autosave();
+    toast('Saved ' + invoices.length + ' invoice(s) to cloud.');
+    status.textContent = 'Saved to cloud just now · ' + invoices.length + ' invoice(s).';
+  } catch(e){
+    console.error(e);
+    toast('Cloud save failed — kept a local copy.', true);
+    autosave();
+  }
+}
+
+function autosave(){ try { localStorage.setItem(LS_KEY, JSON.stringify(invoices)); } catch(e){} }
+
+// ══ PRESETS (exporter / importer / product) ══════════════════════
+function renderParties(){
+  const es = document.getElementById('exp-select');
+  es.innerHTML = (PARTIES.exporters||[]).map((e,i)=>'<option value="'+i+'">'+esc(e.name)+'</option>').join('') || '<option>(none)</option>';
+  const is = document.getElementById('imp-select');
+  is.innerHTML = (PARTIES.importers||[]).map((e,i)=>'<option value="'+i+'">'+esc(e.name)+'</option>').join('') || '<option>(none)</option>';
+  if ((PARTIES.exporters||[]).length) applyExporter(0);
+  if ((PARTIES.importers||[]).length) applyImporter(0);
+}
+function applyExporter(i){
+  const e = (PARTIES.exporters||[])[i]; if (!e) return;
+  document.getElementById('exp-name').value = e.name||'';
+  document.getElementById('exp-uen').value  = e.uen||'';
+  document.getElementById('exp-addr').value = e.addr||'';
+}
+function applyImporter(i){
+  const e = (PARTIES.importers||[])[i]; if (!e) return;
+  document.getElementById('imp-name').value = e.name||'';
+  document.getElementById('imp-tel').value  = e.tel||'';
+  document.getElementById('imp-addr').value = e.addr||'';
+}
+function applyProduct(i){
+  const p = (CATALOG.products||[])[i]; if (!p) return;
+  const v = inv();
+  v.product = p.product; v.unit = p.unit; v.rateUSD = +p.rateUSD||0;
+  v.netPU = +p.netPU||0; v.grossPU = +p.grossPU||0; v.packaging = p.packaging||'';
+  v.isNitta = !!p.isNitta;
+  renderForm(); updateCalc(); autosave();
+}
+
+// ── Invoice data ──────────────────────────────────────────────
+function blankInvoice(){
+  return {
+    id: 'inv-' + Date.now() + '-' + Math.floor(Math.random()*100000),
+    label:'', invNo:'INV-NEW', date:'', term:'DDP',
+    expAddr: gv('exp-addr'), product:'', batchNo:'', unit:'cartons',
+    qty:1, rateUSD:0, netPU:0, grossPU:0, qtyDisplay:'', palletWeight:0,
+    packaging:'', sayTotal:'', marks:'', dimDetail:'',
+    isNitta:false, palletRows:[], shippingMark:'', shippingMarkFooter:'', palletDimDetail:''
+  };
+}
+
+let invoices = [blankInvoice()];
+let active = 0;
+
+// ── Helpers ───────────────────────────────────────────────────
+function gv(id){ return document.getElementById(id)?.value || ''; }
+function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function inv(){ return invoices[active]; }
+function calcNet(v){ return +(v.qty * v.netPU).toFixed(3); }
+function calcGross(v){ return +(v.qty * v.grossPU + (v.palletWeight||0)).toFixed(3); }
+function calcTotal(v){ return +(calcNet(v) * v.rateUSD).toFixed(2); }
+
+function set(field, val){
+  const numFields = ['qty','rateUSD','netPU','grossPU','palletWeight','bags'];
+  inv()[field] = numFields.includes(field) ? +val : val;
+  if(['qty','rateUSD','netPU','grossPU','palletWeight'].includes(field)) updateCalc();
+  if(field === 'label' || field === 'invNo') renderChips();
+  autosave();
+}
+
+function updateCalc(){
+  const v = inv();
+  const el = id => document.getElementById(id);
+  if(el('c-net'))   el('c-net').textContent   = calcNet(v).toLocaleString() + ' kg';
+  if(el('c-gross')) el('c-gross').textContent = calcGross(v).toFixed(2) + ' kg';
+  if(el('c-total')) el('c-total').textContent = 'USD ' + calcTotal(v).toLocaleString('en-US', {minimumFractionDigits:0, maximumFractionDigits:2});
+}
+
+// ── Chips ─────────────────────────────────────────────────────
+function renderChips(){
+  document.getElementById('inv-count').textContent = invoices.length;
+  document.getElementById('chips').innerHTML =
+    invoices.map((v,i) =>
+      '<div class="chip' + (i===active?' on':'') + '" onclick="goTab(' + i + ')">' + esc(v.label || v.invNo || 'Invoice '+(i+1)) + '</div>'
+    ).join('') +
+    '<div class="chip add" onclick="addInv()">+ New invoice</div>';
+}
+
+function goTab(i){ active = i; renderChips(); renderForm(); }
+
+function addInv(){
+  const b = blankInvoice();
+  b.invNo = 'INV-NEW-00' + (invoices.length + 1);
+  invoices.push(b);
+  active = invoices.length - 1;
+  renderChips(); renderForm(); autosave();
+}
+
+function removeInv(){
+  if(invoices.length === 1){ alert('At least one invoice is required.'); return; }
+  invoices.splice(active, 1);
+  if(active >= invoices.length) active = invoices.length - 1;
+  renderChips(); renderForm(); autosave();
+}
+
+// ── Pallet rows (Nitta) ───────────────────────────────────────
+function renderPalletRows(){
+  const cont = document.getElementById('pallet-rows-ui');
+  if(!cont) return;
+  const rows = inv().palletRows;
+  cont.innerHTML = rows.map((row, j) =>
+    '<div class="prow">' +
+    '<div class="f"><label>Pallet label</label><input value="' + esc(row.palletNo) + '" oninput="setPalletField(' + j + ',\'palletNo\',this.value)"></div>' +
+    '<div class="f"><label>Bags</label><input type="number" value="' + row.bags + '" oninput="setPalletField(' + j + ',\'bags\',this.value)"></div>' +
+    '<div class="f"><label>Batch no.</label><input value="' + esc(row.batchNo) + '" oninput="setPalletField(' + j + ',\'batchNo\',this.value)"></div>' +
+    '<button class="btn btn-d" style="align-self:flex-end" onclick="removePalletRow(' + j + ')">×</button>' +
+    '</div>'
+  ).join('');
+}
+
+function setPalletField(j, field, val){
+  inv().palletRows[j][field] = field === 'bags' ? +val : val;
+  if(field === 'bags'){
+    inv().qty = inv().palletRows.reduce((a,r) => a + (+r.bags||0), 0);
+    updateCalc();
+  }
+  autosave();
+}
+
+function addPalletRow(){
+  const n = inv().palletRows.length + 1;
+  inv().palletRows.push({palletNo:'Pallet '+n, bags:0, batchNo:''});
+  renderPalletRows(); autosave();
+}
+
+function removePalletRow(j){
+  inv().palletRows.splice(j, 1);
+  inv().qty = inv().palletRows.reduce((a,r) => a + (+r.bags||0), 0);
+  renderPalletRows();
+  updateCalc(); autosave();
+}
+
+// ── Form ──────────────────────────────────────────────────────
+function renderForm(){
+  const v = inv();
+  const net   = calcNet(v);
+  const gross = calcGross(v);
+  const total = calcTotal(v);
+
+  let html = '';
+
+  // Header row
+  html += '<div class="inv-head"><span class="inv-title">' + esc(v.label||v.invNo||'Invoice') + '</span>'
+        + '<button class="btn btn-d" onclick="removeInv()">Remove invoice</button></div>';
+
+  // Invoice header fields
+  html += '<div class="sub">Invoice header</div>';
+  html += '<div class="g4" style="margin-bottom:12px">'
+        + '<div class="f"><label>Tab label</label><input value="' + esc(v.label) + '" oninput="set(\'label\',this.value)" placeholder="e.g. tab name"></div>'
+        + '<div class="f"><label>Invoice no.</label><input value="' + esc(v.invNo) + '" oninput="set(\'invNo\',this.value)"></div>'
+        + '<div class="f"><label>Date</label><input value="' + esc(v.date) + '" placeholder="e.g. 12 November 2025" oninput="set(\'date\',this.value)"></div>'
+        + '<div class="f"><label>Shipment term</label><select onchange="set(\'term\',this.value)">'
+        + ['DDP','EXW','FOB','CIF','CFR','DAP'].map(t => '<option' + (v.term===t?' selected':'') + '>' + t + '</option>').join('')
+        + '</select></div>'
+        + '</div>';
+  html += '<div class="f" style="margin-bottom:14px"><label>Exporter address (override per invoice)</label>'
+        + '<input value="' + esc(v.expAddr) + '" oninput="set(\'expAddr\',this.value)"></div>';
+
+  html += '<hr class="sep">';
+
+  // Product fields
+  html += '<div class="sub">Product</div>';
+  const prodOpts = (CATALOG.products||[]).map((p,i)=>'<option value="'+i+'">'+esc(p.product)+'</option>').join('');
+  if (prodOpts){
+    html += '<div class="f" style="margin-bottom:12px"><label>Fill from catalog</label>'
+          + '<select onchange="if(this.value!==\'\')applyProduct(this.value)"><option value="">— select a product —</option>' + prodOpts + '</select></div>';
+  }
+  html += '<div class="g2" style="margin-bottom:12px">'
+        + '<div class="f"><label>Product name</label><input value="' + esc(v.product) + '" oninput="set(\'product\',this.value)"></div>'
+        + '<div class="f"><label>Batch no. (leave blank if per-pallet)</label><input value="' + esc(v.batchNo) + '" oninput="set(\'batchNo\',this.value)"></div>'
+        + '</div>';
+
+  html += '<div class="g4" style="margin-bottom:12px">'
+        + '<div class="f"><label>Quantity <small style="color:var(--muted)">(for calc)</small></label><input type="number" value="' + v.qty + '" oninput="set(\'qty\',this.value)"></div>'
+        + '<div class="f"><label>Rate (USD/kg)</label><input type="number" value="' + v.rateUSD + '" oninput="set(\'rateUSD\',this.value)"></div>'
+        + '<div class="f"><label>Net wt/unit (kg)</label><input type="number" value="' + v.netPU + '" oninput="set(\'netPU\',this.value)"></div>'
+        + '<div class="f"><label>Gross wt/unit (kg)</label><input type="number" value="' + v.grossPU + '" oninput="set(\'grossPU\',this.value)"></div>'
+        + '</div>';
+
+  html += '<div class="g4" style="margin-bottom:12px">'
+        + '<div class="f"><label>Qty display <small style="color:var(--muted)">(on document)</small></label><input value="' + esc(v.qtyDisplay) + '" placeholder="e.g. 4 pallets (130 bags)" oninput="set(\'qtyDisplay\',this.value)"></div>'
+        + '<div class="f"><label>Unit type</label><input value="' + esc(v.unit) + '" oninput="set(\'unit\',this.value)"></div>'
+        + '<div class="f"><label>Packaging desc.</label><input value="' + esc(v.packaging) + '" oninput="set(\'packaging\',this.value)"></div>'
+        + '<div class="f"><label>"Say total" label</label><input value="' + esc(v.sayTotal) + '" placeholder="e.g. 7 CARTONS" oninput="set(\'sayTotal\',this.value)"></div>'
+        + '</div>';
+
+  html += '<hr class="sep">';
+
+  // Computed totals
+  html += '<div class="sub">Computed totals</div>';
+  html += '<div class="g4" style="margin-bottom:14px">'
+        + '<div class="f"><label>Pallet weight to add (kg)</label><input type="number" value="' + (v.palletWeight||0) + '" oninput="set(\'palletWeight\',this.value)"></div>'
+        + '<div class="f"><label>Total net weight</label><div class="computed" id="c-net">' + net.toLocaleString() + ' kg</div></div>'
+        + '<div class="f"><label>Total gross weight</label><div class="computed" id="c-gross">' + gross.toFixed(2) + ' kg</div></div>'
+        + '<div class="f"><label>Invoice total</label><div class="computed" id="c-total">USD ' + total.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:2}) + '</div></div>'
+        + '</div>';
+
+  html += '<hr class="sep">';
+
+  // PL section — branches for Nitta vs standard
+  html += '<div class="sub">Packing list details</div>';
+
+  if(v.isNitta){
+    html += '<div class="nitta-banner"><strong>Nitta Collagen — pallet breakdown format</strong><br>Enter one row per pallet. The PL will generate the pallet table on page 1 and shipping mark boxes on page 2.</div>';
+    html += '<div class="sub">Pallets</div>';
+    html += '<div id="pallet-rows-ui"></div>';
+    html += '<button class="btn btn-s" style="font-size:11px;padding:5px 14px;margin-bottom:14px" onclick="addPalletRow()">+ Add pallet</button>';
+    html += '<div class="g2" style="margin-bottom:12px">'
+          + '<div class="f"><label>Shipping mark — top lines</label><textarea oninput="set(\'shippingMark\',this.value)">' + esc(v.shippingMark) + '</textarea></div>'
+          + '<div class="f"><label>Shipping mark — footer lines</label><textarea oninput="set(\'shippingMarkFooter\',this.value)">' + esc(v.shippingMarkFooter) + '</textarea></div>'
+          + '</div>';
+    html += '<div class="f" style="margin-bottom:12px"><label>Pallet dimension / gross weight detail</label>'
+          + '<textarea oninput="set(\'palletDimDetail\',this.value)">' + esc(v.palletDimDetail) + '</textarea></div>';
+  } else {
+    html += '<div class="g2" style="margin-bottom:12px">'
+          + '<div class="f"><label>Marks &amp; numbers</label><textarea oninput="set(\'marks\',this.value)">' + esc(v.marks) + '</textarea></div>'
+          + '<div class="f"><label>Dimension detail block</label><textarea oninput="set(\'dimDetail\',this.value)">' + esc(v.dimDetail) + '</textarea></div>'
+          + '</div>';
+  }
+
+  // Buttons
+  html += '<div class="btns">'
+        + '<button class="btn btn-p" onclick="dlCI()">&#8659; Download CI</button>'
+        + '<button class="btn btn-p" onclick="dlPL()">&#8659; Download PL</button>'
+        + '<button class="btn btn-s" onclick="dlBoth()">&#8659; Download Both</button>'
+        + '</div>';
+
+  document.getElementById('inv-form').innerHTML = html;
+
+  if(v.isNitta) renderPalletRows();
+}
+
+// ── PDF helpers ───────────────────────────────────────────────
+function shared(){
+  return {
+    expName: gv('exp-name'),
+    expUen:  gv('exp-uen'),
+    expAddrDefault: gv('exp-addr'),
+    impName: gv('imp-name'),
+    impTel:  gv('imp-tel'),
+    impAddr: gv('imp-addr')
+  };
+}
+
+function drawHeader(doc, v, sh, docTitle){
+  const W=210, ML=20;
+  let y=20;
+  const addr = v.expAddr || sh.expAddrDefault;
+
+  doc.setFont('helvetica','bold'); doc.setFontSize(11);
+  doc.text(sh.expName, W/2, y, {align:'center'}); y+=5;
+  doc.setFont('helvetica','normal'); doc.setFontSize(9);
+  addr.split(',').map(s=>s.trim()).filter(Boolean).forEach(line=>{
+    doc.text(line, W/2, y, {align:'center'}); y+=4.5;
+  });
+  doc.text('UEN: '+sh.expUen, W/2, y, {align:'center'}); y+=8;
+
+  doc.setFont('helvetica','bold'); doc.setFontSize(13);
+  const tw = doc.getTextWidth(docTitle);
+  const tx = W/2 - tw/2;
+  doc.text(docTitle, W/2, y, {align:'center'});
+  doc.setLineWidth(0.4); doc.line(tx, y+0.8, tx+tw, y+0.8);
+  y+=10;
+  return y;
+}
+
+function drawMeta(doc, v, sh, docTitle, y){
+  const ML=20, lx=ML, vx=ML+42;
+  function row(label, val){
+    doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.text(label, lx, y);
+    doc.setFont('helvetica','normal'); doc.text(val, vx, y); y+=5;
+  }
+  row('Date:', v.date||'');
+  row(docTitle==='COMMERCIAL INVOICE'?'Invoice no:':'Invoice reference no:', v.invNo||'');
+  y+=2;
+  doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.text('Importer:', lx, y);
+  doc.setFont('helvetica','normal');
+  doc.text(sh.impName, vx, y); y+=4.5;
+  sh.impAddr.split('\n').map(s=>s.trim()).filter(Boolean).forEach(line=>{ doc.text(line,vx,y); y+=4.5; });
+  doc.text('TEL: '+sh.impTel, vx, y); y+=7;
+  if(docTitle==='COMMERCIAL INVOICE'){
+    doc.setFont('helvetica','bold'); doc.text('Shipment Term:', lx, y);
+    doc.setFont('helvetica','normal'); doc.text(v.term, vx, y); y+=7;
+  }
+  return y;
+}
+
+function drawStampSig(doc, y){
+  const ML=20;
+  const stampH=25, stampW=25*(181/163);
+  const sigH=18,   sigW=18*(127/129);
+  if(STAMP) doc.addImage('data:image/jpeg;base64,'+STAMP,'JPEG',ML,y+4,stampW,stampH);
+  if(SIG)   doc.addImage('data:image/jpeg;base64,'+SIG,  'JPEG',ML+stampW+4,y+4+(stampH-sigH)/2,sigW,sigH);
+}
+
+function drawDimBox(doc, text, y){
+  const ML=20, usable=170;
+  const lines = text.split('\n').map(s=>s.trim()).filter(Boolean);
+  const bh = lines.length*5+6;
+  doc.setDrawColor(170,170,170); doc.rect(ML,y,usable,bh,'S');
+  doc.setFont('helvetica','normal'); doc.setFontSize(8.5);
+  lines.forEach((line,i)=>{ doc.text(line,ML+3,y+5+(i*5)); });
+  return y+bh+6;
+}
+
+// ── CI PDF ────────────────────────────────────────────────────
+function makeCI(v, sh){
+  const {jsPDF} = window.jspdf;
+  const doc = new jsPDF({unit:'mm',format:'a4'});
+  const W=210, ML=20, usable=170;
+
+  let y = drawHeader(doc, v, sh, 'COMMERCIAL INVOICE');
+  y = drawMeta(doc, v, sh, 'COMMERCIAL INVOICE', y);
+
+  // Table
+  const cols = [usable*0.33, usable*0.17, usable*0.16, usable*0.17, usable*0.17];
+  const headers = ['Item','Quantity','Rate','Net Weight','Total'];
+  const net   = calcNet(v);
+  const total = calcTotal(v);
+  const unitSing = v.unit.replace(/s$/,'');
+  const qtyStr = v.qtyDisplay || (v.qty+' '+v.unit);
+  const rowData = [v.product, qtyStr, 'USD'+v.rateUSD+'/kg', v.netPU+'kg/'+unitSing, 'USD'+total.toLocaleString('en-US')];
+
+  // Header row
+  doc.setFillColor(240,240,240); doc.rect(ML,y,usable,7,'FD');
+  doc.setFont('helvetica','bold'); doc.setFontSize(9);
+  let cx=ML;
+  headers.forEach((h,i)=>{ doc.text(h,cx+2,y+4.8); cx+=cols[i]; });
+  y+=7;
+
+  // Data row — handle multi-line product name
+  const prodLines = doc.splitTextToSize(v.product, cols[0]-4);
+  const rowH = Math.max(8, prodLines.length*5+3);
+  doc.setFillColor(255,255,255); doc.rect(ML,y,usable,rowH,'S');
+  cx=ML;
+  rowData.forEach((d,i)=>{
+    doc.setFont('helvetica', i===0||i===rowData.length-1?'bold':'normal');
+    doc.setFontSize(9);
+    if(i===0){ doc.text(prodLines,cx+2,y+5); }
+    else {
+      const lines = doc.splitTextToSize(String(d), cols[i]-4);
+      lines.forEach((l,li)=>doc.text(l,cx+2,y+5+(li*4.5)));
+    }
+    if(i<cols.length-1) doc.line(cx+cols[i],y,cx+cols[i],y+rowH);
+    cx+=cols[i];
+  });
+  y+=rowH+6;
+
+  if(v.batchNo){
+    doc.setFont('helvetica','bold'); doc.setFontSize(9);
+    doc.text('Batch No.: '+v.batchNo, ML, y); y+=5;
+  }
+  doc.setFont('helvetica','bold'); doc.setFontSize(9);
+  doc.text('SAY TOTAL : '+(v.sayTotal||v.qty+' '+v.unit.toUpperCase()), ML, y); y+=5;
+  if(v.dimDetail) y = drawDimBox(doc, v.dimDetail, y);
+
+  drawStampSig(doc, y);
+  return doc;
+}
+
+// ── PL PDF (standard) ─────────────────────────────────────────
+function makeStdPL(v, sh){
+  const {jsPDF} = window.jspdf;
+  const doc = new jsPDF({unit:'mm',format:'a4'});
+  const W=210, ML=20, usable=170;
+
+  let y = drawHeader(doc, v, sh, 'PACKING LIST');
+  y = drawMeta(doc, v, sh, 'PACKING LIST', y);
+
+  const cols = [usable*0.30, usable*0.22, usable*0.24, usable*0.24];
+  const headers = ['Item','Quantity','Net Weight','Gross Weight'];
+  const net   = calcNet(v);
+  const gross = +(v.qty * v.grossPU).toFixed(2);
+  const unitSing = v.unit.replace(/s$/,'');
+  const qtyStr = v.qtyDisplay || (v.qty+' '+v.unit);
+
+  doc.setFillColor(240,240,240); doc.rect(ML,y,usable,7,'FD');
+  doc.setFont('helvetica','bold'); doc.setFontSize(9);
+  let cx=ML;
+  headers.forEach((h,i)=>{ doc.text(h,cx+2,y+4.8); cx+=cols[i]; });
+  y+=7;
+
+  // Data row
+  const prodLines = doc.splitTextToSize(v.product, cols[0]-4);
+  const qtyLines  = doc.splitTextToSize(qtyStr+(v.packaging?'\n'+v.packaging:''), cols[1]-4);
+  const rowH = Math.max(8, Math.max(prodLines.length, qtyLines.length)*5+3);
+  doc.setFillColor(255,255,255); doc.rect(ML,y,usable,rowH,'S');
+  cx=ML;
+  [prodLines, qtyLines, [v.netPU+'kg/'+unitSing], [v.grossPU+'kg/'+unitSing]].forEach((lines,i)=>{
+    doc.setFont('helvetica','normal'); doc.setFontSize(9);
+    lines.forEach((l,li)=>doc.text(l,cx+2,y+5+(li*4.5)));
+    if(i<cols.length-1) doc.line(cx+cols[i],y,cx+cols[i],y+rowH);
+    cx+=cols[i];
+  });
+  y+=rowH;
+
+  // Total row
+  doc.setFillColor(240,240,240); doc.rect(ML,y,usable,7,'FD');
+  cx=ML;
+  [['Total'],'',[(net.toLocaleString()+' KG')],[(gross.toFixed(2)+' KG')]].forEach((d,i)=>{
+    doc.setFont('helvetica','bold'); doc.setFontSize(9);
+    const lines = Array.isArray(d)?d:[d];
+    lines.forEach((l,li)=>doc.text(l,cx+2,y+4.8+(li*4.5)));
+    if(i<cols.length-1) doc.line(cx+cols[i],y,cx+cols[i],y+7);
+    cx+=cols[i];
+  });
+  y+=7+6;
+
+  if(v.batchNo){ doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.text('Batch No.: '+v.batchNo,ML,y); y+=5; }
+  doc.setFont('helvetica','bold'); doc.setFontSize(9);
+  doc.text('SAY TOTAL : '+(v.sayTotal||v.qty+' '+v.unit.toUpperCase()),ML,y); y+=5;
+  if(v.marks){
+    doc.setFont('helvetica','bold'); doc.text('Marks & Number:',ML,y); y+=5;
+    doc.setFont('helvetica','normal');
+    v.marks.split('\n').forEach(line=>{ doc.text(line.trim(),ML,y); y+=4.5; }); y+=2;
+  }
+  if(v.dimDetail) y = drawDimBox(doc, v.dimDetail, y);
+
+  drawStampSig(doc, y);
+  return doc;
+}
+
+// ── PL PDF (Nitta) ────────────────────────────────────────────
+function makeNittaPL(v, sh){
+  const {jsPDF} = window.jspdf;
+  const doc = new jsPDF({unit:'mm',format:'a4'});
+  const W=210, ML=20, usable=170;
+
+  // PAGE 1
+  let y = drawHeader(doc, v, sh, 'PACKING LIST');
+  y = drawMeta(doc, v, sh, 'PACKING LIST', y);
+
+  // Pallet breakdown table — merged item column, clean borders
+  const cols = [usable*0.15, usable*0.22, usable*0.16, usable*0.22, usable*0.25];
+  const headers = ['Pallet No.','Item','Qty (Bag)','Net Weight (kg)','Batch No.'];
+  const rowH = 8;
+
+  // Header row
+  doc.setFillColor(230,230,230); doc.rect(ML,y,usable,rowH,'FD');
+  doc.setLineWidth(0.4); doc.setDrawColor(150,150,150);
+  doc.rect(ML,y,usable,rowH,'S');
+  doc.setFont('helvetica','bold'); doc.setFontSize(9);
+  let cx=ML;
+  headers.forEach((h,i)=>{ doc.text(h,cx+3,y+5.5); cx+=cols[i]; });
+  // Header vertical dividers
+  cx=ML;
+  cols.forEach((w,i)=>{ cx+=w; if(i<cols.length-1){ doc.setLineWidth(0.4); doc.line(cx,y,cx,y+rowH); } });
+  y+=rowH;
+
+  // Data rows — draw all rows first (white bg, no internal lines for item col)
+  let totalBags=0;
+  const startY = y;
+  const totalRows = v.palletRows.length;
+  const itemX = ML + cols[0];
+  const itemW = cols[1];
+
+  v.palletRows.forEach((row,ri)=>{
+    totalBags += +row.bags;
+    const netKg = row.bags * v.netPU;
+
+    // Full row white background
+    doc.setFillColor(255,255,255);
+    doc.rect(ML,y,usable,rowH,'F');
+
+    // Pallet No. text
+    doc.setFont('helvetica','normal'); doc.setFontSize(9);
+    doc.text(row.palletNo, ML+3, y+5.5);
+
+    // Qty, Net Weight, Batch No. text
+    cx = ML + cols[0] + cols[1];
+    doc.text(String(row.bags), cx+3, y+5.5);
+    cx += cols[2];
+    doc.text(String(netKg), cx+3, y+5.5);
+    cx += cols[3];
+    doc.text(String(row.batchNo), cx+3, y+5.5);
+
+    y += rowH;
+  });
+
+  const dataH = rowH * totalRows;
+
+  // Draw outer border of entire data block
+  doc.setLineWidth(0.4); doc.setDrawColor(150,150,150);
+  doc.rect(ML, startY, usable, dataH, 'S');
+
+  // Draw horizontal lines between rows — LEFT segment only (pallet no col)
+  doc.setLineWidth(0.25); doc.setDrawColor(180,180,180);
+  for(let ri=1; ri<totalRows; ri++){
+    const lineY = startY + ri*rowH;
+    doc.line(ML, lineY, itemX, lineY);
+    doc.line(itemX+itemW, lineY, ML+usable, lineY);
+  }
+
+  // Vertical dividers — left boundary of item col, right boundary, and right cols
+  doc.setLineWidth(0.4); doc.setDrawColor(150,150,150);
+  doc.line(itemX, startY, itemX, startY+dataH);
+  doc.line(itemX+itemW, startY, itemX+itemW, startY+dataH);
+  cx = itemX+itemW+cols[2];
+  doc.line(cx, startY, cx, startY+dataH);
+  cx += cols[3];
+  doc.line(cx, startY, cx, startY+dataH);
+
+  // Item merged cell — drawn LAST so it covers all horizontal lines cleanly
+  doc.setFillColor(255,255,255);
+  doc.rect(itemX+0.5, startY+0.5, itemW-1, dataH-1, 'F');
+  doc.setFont('helvetica','normal'); doc.setFontSize(9);
+  doc.text(v.product, itemX+4, startY + dataH/2 + 1.5);
+
+  // Total row
+  const totalNet = totalBags * v.netPU;
+  doc.setFillColor(230,230,230);
+  doc.rect(ML,y,usable,rowH,'FD');
+  doc.setLineWidth(0.4); doc.setDrawColor(150,150,150);
+  doc.rect(ML,y,usable,rowH,'S');
+  doc.setFont('helvetica','bold'); doc.setFontSize(9);
+  doc.text('Total', ML+3, y+5.5);
+  cx = ML+cols[0]+cols[1];
+  doc.line(cx,y,cx,y+rowH);
+  doc.text(totalBags+' bags', cx+3, y+5.5);
+  cx+=cols[2]; doc.line(cx,y,cx,y+rowH);
+  doc.text(totalNet+'kg', cx+3, y+5.5);
+  cx+=cols[3]; doc.line(cx,y,cx,y+rowH);
+  y+=rowH+8;
+
+  // Gross weight + pallet dim detail box
+  const nitGross = calcGross(v);
+  const grossLine = 'Total Gross weight: ' + nitGross.toFixed(2) + ' kg';
+  const dimLines = [grossLine, ...(v.palletDimDetail ? v.palletDimDetail.split('\n').map(s=>s.trim()).filter(Boolean) : [])];
+  const dimText = dimLines.join('\n');
+  if(dimText.trim()) y = drawDimBox(doc, dimText, y);
+
+  drawStampSig(doc, y);
+
+  return doc;
+}
+
+// ── Download ──────────────────────────────────────────────────
+function dlCI(){
+  const v=inv(), sh=shared();
+  makeCI(v,sh).save('CI_'+v.invNo+'.pdf');
+}
+function dlPL(){
+  const v=inv(), sh=shared();
+  (v.isNitta ? makeNittaPL(v,sh) : makeStdPL(v,sh)).save('PL_'+v.invNo+'.pdf');
+}
+function dlBoth(){
+  dlCI();
+  setTimeout(dlPL, 500);
+}
+</script>
+</body>
+</html>
